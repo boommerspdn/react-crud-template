@@ -1,23 +1,22 @@
-import { useReactQueryDelete, useReactQueryPut } from "@/lib/data";
-import { PostType } from "@/types";
+import { useDeletePost, useUpdatePost } from "@/hooks/use-post";
 import { Edit, Trash } from "lucide-react";
 import { useState } from "react";
 
-const Post = ({ id, title }: PostType) => {
+type PostProps = {
+  id: string;
+  title: string;
+};
+
+const Post = ({ id, title }: PostProps) => {
   const [input, setInput] = useState("");
 
-  const { mutate: editPost } = useReactQueryPut<PostType>(
-    "/posts",
-    id as string,
-    ["posts"],
-  );
+  const { mutate: editPost } = useUpdatePost(id);
+  const { mutate: deletePost } = useDeletePost(id);
 
-  const { mutate: deletePost } = useReactQueryDelete("/posts", id as string, [
-    "posts",
-  ]);
+  // console.log(data);
 
   const handleEdit = () => {
-    editPost({ title: input });
+    editPost({ id, title: input });
   };
 
   const handleDelete = () => {

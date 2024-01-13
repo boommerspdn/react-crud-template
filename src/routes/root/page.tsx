@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Loader2 } from "lucide-react";
 
-import { useReactQueryGet, useReactQueryPost } from "@/lib/data";
-import { PostType } from "@/types";
 import Post from "./components/post";
+import { useCreatePost, usePosts } from "@/hooks/use-post";
 
 const HomePage = () => {
   const [input, setInput] = useState("");
 
-  const { data: posts } = useReactQueryGet<PostType[]>("/posts", null, [
-    "posts",
-  ]);
-
-  const { mutate: createPost } = useReactQueryPost<PostType>("/posts", [
-    "posts",
-  ]);
+  const { data: posts, isLoading, error } = usePosts();
+  const { mutate: createPost } = useCreatePost();
 
   const handleCreate = () => {
     createPost({ id: uuidv4(), title: input });
@@ -35,9 +30,12 @@ const HomePage = () => {
       >
         Add Data
       </button>
-      {posts?.map((item) => (
-        <Post key={item.id} id={item.id} title={item.title} />
-      ))}
+      {isLoading && <Loader2 className="animate-spin" />}
+      {!isLoading &&
+        posts?.map((item) => (
+          <Post key={item.id} id={item.id} title={item.title} />
+        ))}
+      {error ? <span>Error fetching data</span> : null}
     </div>
   );
 };

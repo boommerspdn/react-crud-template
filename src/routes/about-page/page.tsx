@@ -1,13 +1,11 @@
-import { useLoaderData } from "@tanstack/react-router";
-
-import { PostType } from "@/types";
+import { useGetPost } from "@/hooks/use-post";
 
 const AboutPage = () => {
-  const aboutData = useLoaderData({ from: "/about-us" }) as PostType[];
-
+  const { data } = useGetPost("145bd5cd-4b0f-4841-9783-5fafdd996520");
+  console.log(data);
   return (
     <div className="text-3xl underline">
-      <h1>{aboutData[0].title}</h1>
+      <h1>AboutPage</h1>
     </div>
   );
 };

@@ -1,20 +1,16 @@
 {
   "posts": [
     {
-      "id": "34673eb7-9c22-437b-9b49-2085cce587b4",
-      "title": "test"
+      "id": "ca675ad1-ae74-4d79-8605-4667a72314cd",
+      "title": "Test"
     },
     {
-      "id": "c8329123-242f-4ca1-a6b0-ae3307de57b8",
-      "title": "test"
+      "id": "525d891e-2e44-4279-9c6a-736022d35eb8",
+      "title": "ASD"
     },
     {
-      "id": "719948e1-5802-42e8-9a2c-2c7eec3c0b34",
-      "title": "asdasd"
-    },
-    {
-      "id": "c0ead233-b5d6-4875-9880-aa7605a76fbd",
-      "title": "test"
+      "id": "5820b853-ee9f-4d92-92e3-13c0b640015b",
+      "title": "Hello"
     }
   ],
   "comments": [
