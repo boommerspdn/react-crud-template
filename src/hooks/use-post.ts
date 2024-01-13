@@ -9,7 +9,7 @@ const keys = "posts";
 
 export const usePosts = () => {
   return useQuery<Post[]>({
-    queryFn: () => axios.get(`${baseURL}${endPoint}`).then((res) => res.data),
+    queryFn: () => axios.get(`${baseURL}${endPoint}s`).then((res) => res.data),
     queryKey: keys,
   });
 };

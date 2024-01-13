@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AxiosError } from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { Loader2 } from "lucide-react";
 
@@ -30,12 +31,17 @@ const HomePage = () => {
       >
         Add Data
       </button>
-      {isLoading && <Loader2 className="animate-spin" />}
-      {!isLoading &&
+      {isLoading ? (
+        <Loader2 className="animate-spin" />
+      ) : error instanceof AxiosError ? (
+        <div>
+          ERROR:{error.response?.status} {error.response?.statusText}
+        </div>
+      ) : (
         posts?.map((item) => (
           <Post key={item.id} id={item.id} title={item.title} />
-        ))}
-      {error ? <span>Error fetching data</span> : null}
+        ))
+      )}
     </div>
   );
 };

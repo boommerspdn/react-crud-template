@@ -40,7 +40,9 @@ const notFoundRoute = new NotFoundRoute({
 const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
 
 const router = new Router({ routeTree, notFoundRoute });
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } },
+});
 
 declare module "@tanstack/react-router" {
   interface Register {
