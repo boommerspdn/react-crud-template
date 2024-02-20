@@ -1,4 +1,4 @@
-import { useDeletePost, useUpdatePost } from "@/hooks/use-post";
+import { useDeletePost, useUpdatePost } from "@/apis/post";
 import { Edit, Trash } from "lucide-react";
 import { useState } from "react";
 

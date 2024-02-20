@@ -10,18 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.4.2",
-    "@tanstack/router-devtools": "^1.1.10",
     "@types/qs": "^6.9.11",
     "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "json-server": "^1.0.0-alpha.20",
+    "localforage": "^1.10.0",
     "lucide-react": "^0.307.0",
+    "match-sorter": "^6.3.3",
     "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
+    "react-router-dom": "^6.21.3",
+    "sort-by": "^1.2.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^9.0.1"

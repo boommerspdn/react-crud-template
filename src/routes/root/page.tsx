@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Loader2 } from "lucide-react";
 
 import Post from "./components/post";
-import { useCreatePost, usePosts } from "@/hooks/use-post";
+import { useCreatePost, usePosts } from "@/apis/post";
 
 const HomePage = () => {
   const [input, setInput] = useState("");
